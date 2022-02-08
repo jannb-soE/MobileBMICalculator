@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileBMICalculatorApp.Views.CalculatorView"
+             xmlns:viewModel="clr-namespace:MobileBMICalculatorApp.ViewModels"
+             Title="BMI Calculator">
+
+    <ContentPage.BindingContext>
+        <viewModel:CalculatorViewModel />
+    </ContentPage.BindingContext>
+
+
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="90"/>
+                    <ColumnDefinition Width="160"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="With this app you can calculate your BMI." 
+                   TextColor="Black"
+                   Grid.Row="0"
+                   Grid.ColumnSpan="6"
+                   FontSize="17"
+                   FontAttributes="Bold"
+                   Margin="21,35,0,0"
+                   VerticalOptions="Center"/>
+
+                <Label Text="Height:" 
+                   TextColor="Black"
+                   Grid.Row="1"
+                   Grid.Column="0" 
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   Margin="21,35,0,0"
+                   VerticalOptions="Center"/>
+
+                <Label Text="Weight:"
+                   TextColor="Black"
+                   Grid.Row="2"
+                   Grid.Column="0"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   Margin="21,0,0,0"
+                   VerticalOptions="Center"/>
+
+                <Label Text="cm"
+                   TextColor="Black"
+                   Grid.Row="1"
+                   Grid.Column="4"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   Margin="-30,0,0,20"
+                   VerticalOptions="End"/>
+
+                <Label Text="kg"
+                   TextColor="Black"
+                   Grid.Row="2"
+                   Grid.Column="4"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   Margin="-30,0,0,20"
+                   VerticalOptions="End"/>
+
+                <Entry Grid.Row="1"
+                   Grid.Column="1"
+                   Keyboard="Numeric"
+                   Margin="5,45,0,5"
+                   Text="{Binding Path=Height, UpdateSourceEventName=PropertyChanged}"/>
+
+                <Entry Grid.Row="2"
+                   Grid.Column="1"
+                   Keyboard="Numeric"
+                   Margin="5,5,0,5"
+                   Text="{Binding Path=Weight, UpdateSourceEventName=PropertyChanged}"/>
+
+                <Label Text="Your BMI:" 
+                   TextColor="Black"
+                   Grid.Row="3"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   Margin="20,0,0,4"
+                   VerticalOptions="End"/>
+
+                <Label Text="{Binding Path=CalculatedBMI, UpdateSourceEventName=PropertyChanged}"
+                   TextColor="#67B2BE"
+                   Grid.Row="3"
+                   Grid.Column="1"
+                   FontSize="36"
+                   FontAttributes="Bold"
+                   VerticalOptions="End"
+                   HorizontalOptions="End"/>
+
+                <Label Text="{Binding Path=BmiInfo, UpdateSourceEventName=PropertyChanged}" 
+                   Grid.Row="3"
+                   Grid.Column="2"
+                   FontSize="18"
+                   Margin="10,0,0,4"
+                   VerticalOptions="End"/>
+
+
+                <Button Text="Calculate BMI"
+                    TextColor="White"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="6"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    Margin="10,65,10,-50"
+                    Background="#67B2BE"
+                    Command="{Binding Calculate}"/>
+                
+
+                <Button Text="Delete Input"
+                    TextColor="White"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="6"
+                    FontSize="17"
+                    FontAttributes="Bold"
+                    Margin="10,60,10,-45"
+                    BackgroundColor="#67B2BE"
+                    Command="{Binding ClearValues}"/>
+
+                <Button Text="Save BMI"
+                    TextColor="White"
+                    Grid.Row="6"
+                    Grid.ColumnSpan="6"
+                    FontSize="17"
+                    FontAttributes="Bold"                        
+                    Margin="10,55,10,-40"
+                    BackgroundColor="#67B2BE"
+                    Command="{Binding SaveValue}"/>
+
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileBMICalculatorApp.Views.EditDataView"
+             xmlns:viewModel="clr-namespace:MobileBMICalculatorApp.ViewModels"
+             Title="Data">
+
+
+
+    <ContentPage.BindingContext>
+        <viewModel:EditDataViewModel />
+    </ContentPage.BindingContext>
+
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="60" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Label Text="User:"
+                       TextColor="Black"
+                       Grid.Row="0"
+                       Grid.ColumnSpan="2"
+                       FontSize="20"
+                       Margin="20,0,0,0"
+                       VerticalOptions="End"/>
+
+                <Button Text="Add New User"
+                    TextColor="White"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2"
+                    FontSize="16"
+                    Margin="10,0,10,0"
+                    BackgroundColor="#67B2BE"
+                    Command="{Binding AddUser}"/>
+
+                <Button Text="Delete User"
+                    TextColor="White"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="2"
+                    FontSize="16"
+                    Margin="10,0,10,0"
+                    BackgroundColor="#67B2BE"
+                    Command="{Binding RemoveUser}"/>
+
+                <Button Text="Clear Used Database"
+                    TextColor="White"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="2"
+                    FontSize="16"
+                    Margin="10,0,10,0"
+                    BackgroundColor="#67B2BE"
+                    Command="{Binding RemoveAllUsers}"/>
+
+                <Label Text="BMI:"
+                       TextColor="Black"
+                       Grid.Row="4"
+                       Grid.ColumnSpan="2"
+                       FontSize="20"
+                       Margin="20,0,0,0"
+                       VerticalOptions="End"/>
+
+                <Button Text="Clear BMI Database"
+                    TextColor="White"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="2"
+                    FontSize="16"
+                    Margin="10,0,10,0"    
+                    BackgroundColor="#67B2BE"
+                    Command="{Binding RemoveAllBMIs}"/>
+
+            </Grid>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+
+</ContentPage>

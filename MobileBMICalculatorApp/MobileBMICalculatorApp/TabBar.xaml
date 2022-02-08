@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:MobileBMICalculatorApp.Views" 
+       xmlns:MobileBMICalculatorApp="clr-namespace:MobileBMICalculatorApp" 
+       x:DataType="MobileBMICalculatorApp:BottomTab"
+       x:Class="MobileBMICalculatorApp.BottomTab">
+    
+    
+    <TabBar>
+        <Tab Title="Calculator" Icon="calc.jpg">
+            <ShellContent ContentTemplate="{DataTemplate local:CalculatorView}" />
+        </Tab>
+        <Tab Title="Settings" Icon="data.png">
+            <ShellContent ContentTemplate="{DataTemplate local:EditDataView}" />
+        </Tab>
+        <Tab Title="History" Icon="his.png">
+            <ShellContent ContentTemplate="{DataTemplate local:HistoryView}" />
+        </Tab>
+        <Tab Title="Overview" Icon="over.png">
+            <ShellContent ContentTemplate="{DataTemplate local:OverviewView}" />
+        </Tab>
+    </TabBar>
+</Shell>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:MobileBMICalculatorApp.ViewModels"
+             x:Class="MobileBMICalculatorApp.Views.InfoView">
+
+    <ContentPage.BindingContext>
+        <viewModel:InfoViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#67B2BE" Padding="20" CornerRadius="0">
+                <Label Text="BMI Calculator" HorizontalTextAlignment="Start" TextColor="White" FontSize="36"/>
+            </Frame>
+            <Label Text="What is the BMI?" FontSize="Title" Padding="30,30,30,30"/>
+            <Label Text="Your body mass index (BMI) is the ratio between your height and your body weight. This guide value acts as a pointer for 
+                   you in terms of preventative healthcare. You can find out here what values are normal and when a person is considered to be under- 
+                   or overweight." FontSize="17" Padding="30,0,30,0"/>
+
+            <Button Text="Calculate your BMI"
+            TextColor="White"
+            FontSize="16"
+            Margin="20"
+            HeightRequest="60"
+            VerticalOptions="EndAndExpand"
+            BackgroundColor="#67B2BE"
+            Command="{Binding StartBMI}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
